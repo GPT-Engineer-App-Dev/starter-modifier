@@ -1,55 +1,56 @@
+import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { useState } from "react";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 
 const HomePage = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Welcome to Our App</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">Welcome to Our Website</h1>
       
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>About Us</CardTitle>
-          <CardDescription>Learn more about our company and mission</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>We are a cutting-edge tech company focused on creating innovative solutions for everyday problems.</p>
-        </CardContent>
-      </Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Feature 1</CardTitle>
+            <CardDescription>Description of feature 1</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>More details about feature 1...</p>
+          </CardContent>
+          <CardFooter>
+            <Button>Learn More</Button>
+          </CardFooter>
+        </Card>
 
-      <div className="text-center">
-        <p className="mb-4">You've clicked the button {count} times</p>
-        <Button onClick={() => setCount(count + 1)}>
-          Click me!
-        </Button>
+        <Card>
+          <CardHeader>
+            <CardTitle>Feature 2</CardTitle>
+            <CardDescription>Description of feature 2</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>More details about feature 2...</p>
+          </CardContent>
+          <CardFooter>
+            <Button>Learn More</Button>
+          </CardFooter>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Feature 3</CardTitle>
+            <CardDescription>Description of feature 3</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>More details about feature 3...</p>
+          </CardContent>
+          <CardFooter>
+            <Button>Learn More</Button>
+          </CardFooter>
+        </Card>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Our Products</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc list-inside">
-              <li>Product A</li>
-              <li>Product B</li>
-              <li>Product C</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Contact Us</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>Email: info@example.com</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Address: 123 Tech Street, Silicon Valley, CA</p>
-          </CardContent>
-        </Card>
+      <div className="mt-12 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Ready to get started?</h2>
+        <Button size="lg">Sign Up Now</Button>
       </div>
     </div>
   );
