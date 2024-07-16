@@ -1,8 +1,18 @@
-import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const HomePage = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle newsletter signup logic here
+    console.log("Signed up with email:", email);
+    setEmail("");
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-8">Welcome to Our Website</h1>
@@ -48,9 +58,18 @@ const HomePage = () => {
         </Card>
       </div>
 
-      <div className="mt-12 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Ready to get started?</h2>
-        <Button size="lg">Sign Up Now</Button>
+      <div className="mt-12">
+        <h2 className="text-2xl font-semibold text-center mb-4">Sign up for our newsletter</h2>
+        <form onSubmit={handleSubmit} className="flex justify-center">
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="max-w-xs mr-2"
+          />
+          <Button type="submit">Subscribe</Button>
+        </form>
       </div>
     </div>
   );
